@@ -67,6 +67,7 @@
                 echo "<form action='../function/priority_edit.php' method='POST'>";
                 echo "<input type='hidden' name='id' value='" . $task['id'] . "'>";
                 echo "<input type='hidden' name='sort' value='". $sort ."'>";
+                echo "<input type='hidden' name='form' value='display'>";
                 echo "<label for='priority'>優先度：</label>";
                 echo "<select name='priority' onchange='this.form.submit()'>";
                 foreach ($prioritys as $priority) {
@@ -79,6 +80,7 @@
                 echo "<form action='../function/status_edit.php' method='POST'>";
                 echo "<input type='hidden' name='id' value='" . $task['id'] . "'>";
                 echo "<input type='hidden' name='sort' value='". $sort ."'>";
+                echo "<input type='hidden' name='form' value='display'>";
                 echo "<label for='status'>ステータス：</label>";
                 echo "<select name='status' onchange='this.form.submit()'>";
                 foreach ($options as $option) {
@@ -108,6 +110,7 @@
                     </button>";
                 echo "<form action='../function/task_delete.php' method='POST'>";
                 echo "<input type='hidden' name='id' value='" . $task['id'] . "'>";
+                echo "<input type='hidden' name='form' value='display'>";
                 echo "<button class='task_delete' type='submit'>削除</button>";
                 echo "</form></div></div>";
             }
@@ -126,6 +129,7 @@
             <form id="editForm" method="POST" action="../function/update.php">
                 <input type="hidden" name="id" id="modal_id">
                 <input type="hidden" name="sort" value="<?php echo $sort; ?>">;
+                <input type='hidden' name='form' value='display'>;
                 <!-- タスク名 -->
                 <div>
                     <label class="character">タスク名</label><span class="colon">：</span>

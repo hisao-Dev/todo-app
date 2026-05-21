@@ -12,7 +12,7 @@ $task_time = $time_h.":".$time_m;
 $priority = $_POST['priority'];
 $status = $_POST['status'];
 $sort = $_POST['sort'];
-echo $sort;
+$form = $_POST['form'];
 
 if ($task_date !== '') {
     // 時間が未入力なら 00:00 に設定
@@ -69,8 +69,11 @@ try {
     //     ':task_datetime' => $task_datetime,
     //     ':priority' => $priority
     // ]);
-
-    header("Location: ../Views/index.php?page=display&status=complete&sort=$sort");
+    if ($form === 'display') {
+        header('Location: ../Views/index.php?page=display&status=complete');
+    } else if($form === 'list') {
+        header('Location: ../Views/index.php?page=list_tasks&status=complete');
+    }
     exit;
 } catch (PDOException $e) {
     echo "エラー: " . $e->getMessage();

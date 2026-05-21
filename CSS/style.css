@@ -45,6 +45,18 @@ header {
     margin: 10px 10px;
 } 
 
+#message {
+    color: red;
+    text-align: center;
+    animation: fadeout 3s forwards;
+}
+
+@keyframes fadeout {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
 #right {
     width: 80%;
     /* height: 95%; */
