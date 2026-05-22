@@ -63,8 +63,19 @@ div > #display {
     height: 2em;
 }
 
-#sortForm {
+#sortForm,
+#filterForm {
     margin-bottom: 10px;
+}
+
+#filterForm {
+    display: flex;
+}
+
+#toggle {
+    display: flex;
+    gap: 1em;
+    margin-left: 2em;
 }
 
 .modal {

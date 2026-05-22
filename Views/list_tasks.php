@@ -8,6 +8,27 @@
         echo $date->format('Y年m月d日') . "($dayOfWeek)";
     ?> -->
 </p>
+<?php 
+    $filter = $_GET['filter'] ?? 'all'; 
+    $status = $_GET['status'] ?? ['todo','doing','done'];    
+?>
+<div id="filterToggle">
+    <form id="filterForm" method="GET">
+        <input type="hidden" name="page" value="<?= $page='list_tasks' ?>">
+        <label for="filter">フィルタ:</label>
+        <select name="filter" id="filter" onchange="this.form.submit()">
+            <option value="all" <?= $filter === 'all' ? 'selected' : '' ?>>すべて</option>
+            <option value="upcoming" <?= $filter === 'upcoming' ? 'selected' : '' ?>>明日以降</option>
+            <option value="overdue" <?= $filter === 'overdue' ? 'selected' : '' ?>>期限切れ</option>
+            <option value="no_due_date" <?= $filter === 'no_due_date' ? 'selected' : '' ?>>期限なし</option>  
+        </select>
+        <div id="toggle">
+            <label><input type="checkbox" name="status[]" value="todo" <?= in_array('todo', $status) ? 'checked' : '' ?>>未着手</label>
+            <label><input type="checkbox" name="status[]" value="doing" <?= in_array('doing', $status) ? 'checked' : '' ?>>進行中</label>
+            <label><input type="checkbox" name="status[]" value="done" <?= in_array('done', $status) ? 'checked' : '' ?>>完了</label>
+        </div>
+    </form>
+</div>
 
 
 <!-- タスクの表示 -->
@@ -19,7 +40,7 @@
             $today = date('Y-m-d');
             $options = ['未着手', '進行中', '完了'];
             $prioritys = ['高', '中', '低', '-']; 
-            $sort = $_GET['sort'] ?? 'time';
+            // $sort = $_GET['sort'] ?? 'time';
             
 
             // ソート付きでタスク取得
@@ -47,7 +68,7 @@
                 // 優先度フォーム
                 echo "<form action='../function/priority_edit.php' method='POST'>";
                 echo "<input type='hidden' name='id' value='" . $task['id'] . "'>";
-                echo "<input type='hidden' name='sort' value='". $sort ."'>";
+                // echo "<input type='hidden' name='sort' value='". $sort ."'>";
                 echo "<input type='hidden' name='form' value='list'>";
                 echo "<label for='priority'>優先度：</label>";
                 echo "<select name='priority' onchange='this.form.submit()'>";
@@ -60,7 +81,7 @@
                 // ステータスフォーム
                 echo "<form action='../function/status_edit.php' method='POST'>";
                 echo "<input type='hidden' name='id' value='" . $task['id'] . "'>";
-                echo "<input type='hidden' name='sort' value='". $sort ."'>";
+                // echo "<input type='hidden' name='sort' value='". $sort ."'>";
                 echo "<input type='hidden' name='form' value='list'>";
                 echo "<label for='status'>ステータス：</label>";
                 echo "<select name='status' onchange='this.form.submit()'>";
@@ -77,7 +98,7 @@
                 // 編集・削除
                 echo "<div class='task_footer'>";
                 echo "<button class='task_edit' 
-                        data-sort='". $sort."'
+                        
                         data-id='" . $task['id'] . "' 
                         data-title='" . htmlspecialchars($task['title']) . "'
                         data-content='" . htmlspecialchars($task['content']) . "'
@@ -109,8 +130,8 @@
 
             <form id="editForm" method="POST" action="../function/update.php">
                 <input type="hidden" name="id" id="modal_id">
-                <input type="hidden" name="sort" value="<?php echo $sort; ?>">;
-                <input type='hidden' name='form' value='list'>;
+                <!-- <input type="hidden" name="sort" value="<?php echo $sort; ?>"> -->
+                <input type='hidden' name='form' value='list'>
                 <!-- タスク名 -->
                 <div>
                     <label class="character">タスク名</label><span class="colon">：</span>

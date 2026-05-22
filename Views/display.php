@@ -128,8 +128,8 @@
 
             <form id="editForm" method="POST" action="../function/update.php">
                 <input type="hidden" name="id" id="modal_id">
-                <input type="hidden" name="sort" value="<?php echo $sort; ?>">;
-                <input type='hidden' name='form' value='display'>;
+                <input type="hidden" name="sort" value="<?php echo $sort; ?>">
+                <input type='hidden' name='form' value='display'>
                 <!-- タスク名 -->
                 <div>
                     <label class="character">タスク名</label><span class="colon">：</span>

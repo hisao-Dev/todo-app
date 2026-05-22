@@ -31,3 +31,9 @@ edit_btn.forEach(button => {
     document.getElementById('modal_priority').value = this.dataset.priority;
   });
 });
+
+document.querySelectorAll("input[name='status[]']").forEach(cb => {
+  cb.addEventListener("change", () => {
+    document.getElementById("filterForm").submit();
+  });
+});
