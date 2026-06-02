@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $db   = 'todo_app';
-$user = 'todo-app';
-$pass = 'asdf2469?';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 // dsn（Data Source Name）
