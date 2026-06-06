@@ -25,7 +25,6 @@ header {
 
 #left {
     width: 20%;
-    /* height: 95%; */
 }
 
 #menu {
@@ -59,7 +58,6 @@ header {
 
 #right {
     width: 80%;
-    /* height: 95%; */
     display: flex;
     flex-direction: column;
 }

@@ -42,33 +42,6 @@ try {
         ':priority' => $priority
     ]);
 
-
-    // if ($user) {
-    //     $user_id = $user['id']; // 既存ユーザー
-    //     echo "既存ユーザーID: $user_id<br>";
-    // } else {
-    //     // ユーザーが存在しなければ新規作成
-    //     $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
-    //     $stmt->execute([
-    //         ':name' => "テスト",
-    //         ':email' => $email,
-    //         ':password' => "123"
-    //     ]);
-    //     $user_id = $pdo->lastInsertId();
-    //     echo "新規ユーザー作成ID: $user_id<br>";
-    // }
-
-    // タスク登録
-    // $sql = "INSERT INTO tasks (user_id, task, content, task_datetime, priority) 
-    //         VALUES (:user_id, :task, :content, :task_datetime, :priority)";
-    // $stmt = $pdo->prepare($sql);
-    // $stmt->execute([
-    //     // ':user_id' => $user_id,
-    //     ':task' => $task,
-    //     ':content' => $content,
-    //     ':task_datetime' => $task_datetime,
-    //     ':priority' => $priority
-    // ]);
     if ($form === 'display') {
         header('Location: ../Views/index.php?page=display&status=complete');
     } else if($form === 'list') {
