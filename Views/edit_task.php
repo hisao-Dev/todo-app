@@ -15,7 +15,7 @@ try {
 } catch (PDOException $e) {
     echo "エラー: " . $e->getMessage();
 }
-var_dump($tasks = $stmt->fetchAll(PDO::FETCH_ASSOC));//------------------------------------------------------------------
+var_dump($tasks = $stmt->fetchAll(PDO::FETCH_ASSOC));
 ?>
 <p id="title">
     編集画面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

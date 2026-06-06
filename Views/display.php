@@ -134,7 +134,7 @@
                 <div>
                     <label class="character">タスク名</label><span class="colon">：</span>
                 </div>
-                <textarea type="text" name="title" id="modal_task" required></textarea>
+                <textarea type="text" name="title" id="modal_task" maxlength="30" required></textarea>
                 
                 <!-- 内容 -->
                 <div>

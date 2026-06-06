@@ -9,6 +9,10 @@ $task_time_h = $_POST['task_time_h'] ?? '';
 $task_time_m = $_POST['task_time_m'] ?? '';
 $task_time = $task_time_h.":".$task_time_m;
 
+if (mb_strlen($title, 'UTF-8') > 30) {
+    die("エラー：タスク名は50文字以内で入力してください。");
+}
+
 if ($task_date !== '') {
     // 時間が未入力なら 00:00 に設定
     $task_time = $task_time !== '' ? $task_time : '00:00';

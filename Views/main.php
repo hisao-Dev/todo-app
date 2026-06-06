@@ -6,7 +6,6 @@
                 <li><a href="index.php?page=display">今日のタスク</a></li>
                 <li><a href="index.php?page=add_task">新規入力</a></li>
                 <li><a href="index.php?page=list_tasks">タスク一覧表</a></li>
-                <li><a href="index.php?page=calendar">カレンダー</a></li>
             </ul>
             <?php 
             $message = '';
@@ -34,9 +33,6 @@
                         break;
                     case 'list_tasks':
                         require_once 'list_tasks.php';
-                        break;
-                    case 'calendar':
-                        require_once 'calendar.php';
                         break;
                     case 'edit_task':
                         require_once 'edit_task.php';

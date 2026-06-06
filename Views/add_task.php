@@ -6,8 +6,8 @@
 <div id="menu_item">
     <form action="../function/create.php" method="POST">
         <!-- タスク名 -->
-        <label for="task">タスク名：<span>(必須)</span></label>
-        <input type="text" id="task" name="title" required><br>
+        <label for="title">タスク名：<span>(必須)</span></label>
+        <input type="text" id="task" name="title" maxlength="30" required><br>
 
         <!-- 内容 -->
         <label for="content">内容：</label>

@@ -132,19 +132,18 @@ div > #display {
 
 #modal_task {
     width: 480px;
-    height: 2em;
+    height: 1.5em;
+    padding: 10px;
 }
 
 #modal_content {
     width: 80%;
     height: 30%;
-}
-
-#modal_task,
-#modal_content {
     white-space: normal;       
     word-break: break-word; 
     overflow-y: auto;
+    padding: 10px;
+    line-height: 1.6;
 }
 
 #datetime {
